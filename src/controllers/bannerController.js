@@ -1,5 +1,6 @@
 mysql = require("../../bin/mysql").connection;
 
+// console.log(mysql);
 exports.get = (req,res,next) =>{
 
     mysql.connect();
