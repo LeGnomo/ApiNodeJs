@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node node_modules/nodemon/bin/nodemon bin/server"
+    "dev": "node node_modules/nodemon/bin/nodemon bin/server",
+    "prod" : "node node_moduloes/nodemon/bin/nodemon /home4/gnomes46/api.node/bin/server"
   },
   "author": "",
   "license": "ISC",
