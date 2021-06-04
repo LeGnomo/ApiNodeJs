@@ -4,7 +4,9 @@ const router = express.Router();
 
 
 //Controllers
-const bannerController = require("../controllers/bannerController");
+const heroController = require("../controllers/heroController");
+const productController = require("../controllers/productController");
+const categoryController = require("../controllers/categoryController");
 
 router.get('/', (req, res, next) => {
   res.status(200).send({
@@ -13,6 +15,10 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.get("/getBanner",bannerController.get);
+router.get("/getHero",heroController.get);
+
+router.get("/getProductByCategory/:id",productController.getByCategory);
+
+router.get("/getCategory",categoryController.getAll);
 
 module.exports = router;

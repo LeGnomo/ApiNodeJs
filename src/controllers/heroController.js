@@ -1,16 +1,13 @@
-mysql = require("../../bin/mysql").connection;
+const mysql = require("../../bin/mysql").connection;
 
-// console.log(mysql);
 exports.get = (req,res,next) =>{
 
-    mysql.connect();
     mysql.query(
-        "select * from cmsitem where tipo = ?",
+        "SELECT custom1,custom2,chave,titulo,img1 FROM cmsitem WHERE tipo = ? AND st_ativo='S' ",
         ['bannerprincipal'],
         (err,result,field)=>{
         if(err) res.status(500).send({error : "failed"})
         res.status(201).send(result);
     })
 
-    mysql.end();
 }
